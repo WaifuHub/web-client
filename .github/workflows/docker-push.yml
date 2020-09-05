@@ -24,6 +24,7 @@ jobs:
           DOCKER_PASS: ${{ secrets.DOCKER_PASS }}
         run: |
           echo "$DOCKER_PASS" | docker login --username "$DOCKER_USER" --password-stdin
+          npm install
           npm run-script build
           docker build -t whub_web_client .
           docker tag whub_web_client apol12/whub_web_client:latest
