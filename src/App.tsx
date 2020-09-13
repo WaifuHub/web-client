@@ -19,7 +19,7 @@ const App = ({
              }: IProps) => {
     React.useEffect(() => {
         checkAuthenticationConnect();
-    }, []);
+    }, [checkAuthenticationConnect]);
 
     const app = isAuthenticated !== null ? (
         <Router history={history}>
